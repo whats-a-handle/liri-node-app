@@ -1,0 +1,24 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "CLI for API integration practice using Node for Homework 8",
+  "main": "index.js",
+  "dependencies": {
+    "node-spotify-api": "^1.0.7",
+    "request": "^2.83.0",
+    "twitter": "^1.7.1"
+  },
+  "scripts": {
+    "test": "console.log(\"hello world\")"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whats-a-handle/liri-node-app.git"
+  },
+  "author": "whats-a-handle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whats-a-handle/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/whats-a-handle/liri-node-app#readme"
+}
