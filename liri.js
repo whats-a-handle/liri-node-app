@@ -17,20 +17,20 @@ function processInput(input){
 
 	if(input.command === 'my-tweets'){
 		
-		const TwitterHandler = require('./twitterhandler.js');
+		const TwitterHandler = require('./source/twitterhandler.js');
 		
 		TwitterHandler.getTweets(input.query);
 
 	}
 	else if(input.command ==='new-tweet'){
-		const TwitterHandler = require('./twitterhandler.js');
+		const TwitterHandler = require('./source/twitterhandler.js');
 		
 		TwitterHandler.postTweet(input.query);
 
 	}
 	else if(input.command === 'spotify-this-song'){
 
-		const spotifyCredentials = require("./keys").spotify;
+		const spotifyCredentials = require("./source/keys").spotify;
 		console.log('Searching spotify for ' + input.query);
 		
 	}
