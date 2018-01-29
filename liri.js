@@ -30,8 +30,8 @@ function processInput(input){
 	}
 	else if(input.command === 'spotify-this-song'){
 
-		const spotifyCredentials = require("./source/keys").spotify;
-		console.log('Searching spotify for ' + input.query);
+		const SpotifyHandler = require('./source/spotifyhandler.js');
+		SpotifyHandler.findSong(input.query);
 		
 	}
 	else if(input.command === 'movie-this'){
