@@ -18,21 +18,24 @@ function createSpotifyHandler(){
 			return Spotify;
 
 		},
+		parseArtists : function(data){
+			const artists = [];
+
+			data.artists.map(function(artist){artists.push(artist.name)});
+
+			return artists;
+		},
 		createSong : function(data){
 			const Song = {
-				artist : '',
+				artist : [],
 				name : data.name,
 				album : data.album.name,
 				preview_url : data.preview_url,
-				parseArtists : function(){
-					const Song = this;
-
-					data.artists.map(function(artist){Song.artist += artist.name});
-
-				}
+				
 			};
 
-			Song.parseArtists();
+			Song.artist = this.parseArtists(data);
+			
 
 			return Song;
 
