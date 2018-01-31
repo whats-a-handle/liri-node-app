@@ -39,10 +39,21 @@ function processInput(input){
 		console.log('Searching for the movie ' + input.query);
 
 	}
+	else{
+
+		const commands = {
+			'my-tweets' : 'returns a list of your 20 most recent tweets',
+			'new-tweet' : 'enter a new tweet to post',
+			'spotify-this-song' : 'enter a song to search',
+			'movie-this' : 'enter a movie to search',
+		}
+		console.log('Invalid Input! Here are some commands you can run:');
+		console.log(commands);
+
+	}
 
 
 }
-
 
 
 
