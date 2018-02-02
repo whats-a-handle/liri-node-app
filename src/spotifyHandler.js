@@ -2,6 +2,7 @@
 	const SpotifyHandler = {
 
 		Spotify : undefined,
+		randomFile : 'random.txt',
 
 		authenticate : function(){
 
@@ -57,6 +58,24 @@
 					data.tracks.items.map(function(song){Songs.push(SpotifyHandler.createSong(song))});
 					console.log(Songs);
 				
+				}
+			});
+
+		},
+
+		randomSong : function(){
+			const FS = require('fs');
+			const SpotifyHandler = this;
+			FS.readFile(SpotifyHandler.randomFile,'utf-8', function (error, text){
+
+				if(error){
+					console.log('Error reading from file ' + randomFile);
+					console.log(error);
+				}
+				else{
+					const randomSongArray = text.split(',');
+					SpotifyHandler.findSong(randomSongArray[Math.floor(Math.random()*randomSongArray.length-1)]);
+
 				}
 			});
 
