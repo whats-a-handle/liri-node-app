@@ -15,17 +15,13 @@ function getInput(){
 function processInput(input){
 
 
-	if(input.command === 'my-tweets'){
-		
+	if(input.command === 'my-tweets'){	
 		const TwitterHandler = require('./twitterHandler.js');
 		TwitterHandler.getTweets(input.query);
-
 	}
 	else if(input.command ==='new-tweet'){
-
 		const TwitterHandler = require('./twitterHandler.js');	
 		TwitterHandler.postTweet(input.query);
-
 	}
 	else if(input.command === 'spotify-this-song'){
 
@@ -38,9 +34,8 @@ function processInput(input){
 		SpotifyHandler.randomSong();
 	}
 	else if(input.command === 'movie-this'){
-
-		console.log('Searching for the movie ' + input.query);
-
+		const OMDBHandler = require('./omdbHandler.js');
+		OMDBHandler.findMovie(input.query);
 	}
 	else{
 
