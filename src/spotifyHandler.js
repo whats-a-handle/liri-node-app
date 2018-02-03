@@ -1,4 +1,3 @@
-
 	const SpotifyHandler = {
 
 		Spotify : undefined,
@@ -74,8 +73,8 @@
 				}
 				else{
 					const randomSongArray = text.split(',');
-					SpotifyHandler.findSong(randomSongArray[Math.floor(Math.random()*randomSongArray.length-1)]);
-
+					SpotifyHandler.findSong(randomSongArray[Math.floor(Math.random() * randomSongArray.length )]);
+					
 				}
 			});
 
