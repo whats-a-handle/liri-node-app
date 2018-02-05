@@ -44,6 +44,11 @@
 						let parsedTweets = [];
 							parsedTweets.push(TwitterHandler.parseTweet(tweet));
 						console.log(parsedTweets);
+				}
+				else{
+					console.log('Error posting tweet...');
+					console.log('Is your status message a duplicate?');
+					console.log(error);
 				}});
 		},
 

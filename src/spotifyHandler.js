@@ -1,7 +1,6 @@
 	const SpotifyHandler = {
 
 		Spotify : undefined,
-		randomFile : 'random.txt',
 
 		authenticate : function(){
 
@@ -19,7 +18,7 @@
 		},
 		parseArtists : function(data){
 			const artists = [];
-
+			
 			data.artists.map(function(artist){artists.push(artist.name)});
 
 			return artists;
@@ -40,12 +39,19 @@
 
 		},
 		findSong : function(input){
+
+			if(input === undefined || input === null || input === ''){
+				input = 'Ace of Spades';
+				console.log('Returning default song: ' + input);
+			}
 			const SpotifyHandler = this;
 			const params = {
 				type : 'track',
 				query : input,
 				limit : 5,
 			};
+
+			
 
 			SpotifyHandler.Spotify.search(params, function(error, data){
 
@@ -61,24 +67,6 @@
 			});
 
 		},
-
-		randomSong : function(){
-			const FS = require('fs');
-			const SpotifyHandler = this;
-			FS.readFile(SpotifyHandler.randomFile,'utf-8', function (error, text){
-
-				if(error){
-					console.log('Error reading from file ' + randomFile);
-					console.log(error);
-				}
-				else{
-					const randomSongArray = text.split(',');
-					SpotifyHandler.findSong(randomSongArray[Math.floor(Math.random() * randomSongArray.length )]);
-					
-				}
-			});
-
-		}
 	};
 	
 

@@ -4,6 +4,9 @@
       OMDB : {},
       
       findMovie : function(movieName){
+         if(movieName === undefined || movieName === null || movieName === ''){
+            movieName = 'Mr. Nobody';
+         }
          const OMDBHandler = this;
          const Request = require('request');
          const searchParam = "&t=" + movieName;
